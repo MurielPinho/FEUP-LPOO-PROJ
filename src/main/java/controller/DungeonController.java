@@ -25,7 +25,7 @@ public class DungeonController {
         }
         else if (model.getPlayerModel().getPosition().equals(model.getDungeonModel().getLadder().getPosition()))
         {
-            model.getDungeonModel().setMazeDone(true);
+            model.nextMaze();
         }
     return true;
     }

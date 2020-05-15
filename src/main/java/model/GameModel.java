@@ -17,8 +17,14 @@ public class GameModel {
         this.height = height;
         for(int i = 1; i <= 4; i++)
             this.mazes.add(new Maze(i));
-        this.dungeonModel = new DungeonModel(390,390, mazes.get(currentMaze));
+        this.dungeonModel = new DungeonModel(mazes.get(currentMaze));
         this.playerModel = new PlayerModel(mazes.get(currentMaze).getPlayer());
+    }
+
+    public void nextMaze() {
+        currentMaze++;
+        this.dungeonModel = new DungeonModel((mazes.get(currentMaze)));
+        this.playerModel.setPosition(mazes.get(currentMaze).getPlayer());
     }
 
     public DungeonModel getDungeonModel() {

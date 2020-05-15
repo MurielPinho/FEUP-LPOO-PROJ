@@ -18,9 +18,9 @@ public class DungeonModel {
 
 
 
-    DungeonModel(int w, int h, Maze maze){
-        this.height = h;
-        this.width = w;
+    DungeonModel(Maze maze){
+        this.height = 390;
+        this.width = 390;
         this.maze = maze;
         this.key = this.maze.getKey();
         this.ladder = this.maze.getLadder();
