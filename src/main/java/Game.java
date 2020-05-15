@@ -1,3 +1,4 @@
+/*
 import com.googlecode.lanterna.SGR;
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextColor;
@@ -16,7 +17,6 @@ import java.util.List;
 import static java.time.temporal.ChronoUnit.SECONDS;
 
 class Game {
-    private Dungeon dungeon;
     private Screen screen;
     private KeyStroke key;
     private TextGraphics graphics;
@@ -291,3 +291,4 @@ class Game {
     });
 
 }
+*/

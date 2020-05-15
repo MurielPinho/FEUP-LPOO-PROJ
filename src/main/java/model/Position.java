@@ -26,10 +26,10 @@ public class Position {
     }
 
     public Position down() {
-        return new Position(x, y - 1);
+        return new Position(x, y + 1);
     }
     public Position up() {
-        return new Position(x, y + 1);
+        return new Position(x, y - 1);
     }
 
     public boolean equals(Object o) {

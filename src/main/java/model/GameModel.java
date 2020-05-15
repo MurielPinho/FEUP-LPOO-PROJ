@@ -9,14 +9,16 @@ public class GameModel {
     private DungeonModel dungeonModel;
     private int width;
     private int height;
-    private int currentMaze;
+    private int currentMaze = 1;
     private List<Maze> mazes = new ArrayList<>();
 
     public GameModel(int width, int height) {
         this.width = width;
         this.height = height;
+        for(int i = 1; i <= 4; i++)
+            this.mazes.add(new Maze(i));
         this.dungeonModel = new DungeonModel(390,390, mazes.get(currentMaze));
-        this.playerModel = new PlayerModel(10,10);
+        this.playerModel = new PlayerModel(mazes.get(currentMaze).getPlayer());
     }
 
     public DungeonModel getDungeonModel() {
@@ -32,4 +34,5 @@ public class GameModel {
     public int getHeight() {
         return height;
     }
+
 }

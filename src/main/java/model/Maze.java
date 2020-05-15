@@ -12,7 +12,7 @@ public class Maze {
     private List<String> walls = new ArrayList<>();
     private Ladder ladder;
     private Key key;
-    private PlayerModel player;
+    private Position player;
 
     public Maze(int n){
         try {
@@ -20,7 +20,7 @@ public class Maze {
             positions=this.readMaze(n);
             this.ladder = new Ladder(positions.get(0),positions.get(1));
             this.key = new Key(positions.get(2), positions.get(3));
-            this.player = new PlayerModel(positions.get(4),positions.get(5));
+            this.player = new Position(positions.get(4),positions.get(5));
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -57,7 +57,7 @@ public class Maze {
         return key;
     }
 
-    public PlayerModel getPlayer() {
+    public Position getPlayer() {
         return player;
     }
 

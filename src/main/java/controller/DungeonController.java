@@ -9,7 +9,7 @@ import java.io.IOException;
 public class DungeonController {
     private GameModel model;
     private GameView view;
-    private DungeonModel dungeon;
+
 
     public DungeonController(GameModel model, GameView view) {
         this.model = model;
@@ -18,6 +18,15 @@ public class DungeonController {
 
 
     public boolean isLevelOver(){
+
+        if (model.getPlayerModel().getPosition().equals(model.getDungeonModel().getKey().getPosition()))
+        {
+            model.getDungeonModel().setKeyObtained(true);
+        }
+        else if (model.getPlayerModel().getPosition().equals(model.getDungeonModel().getLadder().getPosition()))
+        {
+            model.getDungeonModel().setMazeDone(true);
+        }
     return true;
     }
 
@@ -30,7 +39,7 @@ public class DungeonController {
             public void run() {
                 while (true) {
                     try {
-                        Thread.sleep(200);
+                        Thread.sleep(100);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }

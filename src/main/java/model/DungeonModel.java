@@ -1,5 +1,6 @@
 package model;
 
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,6 +12,9 @@ public class DungeonModel {
     private Ladder ladder;
     private List<Wall> walls = new ArrayList<>();
     private Key key;
+    private Instant timer;
+    private boolean keyObtained;
+    private boolean mazeDone;
 
 
 
@@ -20,6 +24,9 @@ public class DungeonModel {
         this.maze = maze;
         this.key = this.maze.getKey();
         this.ladder = this.maze.getLadder();
+        this.keyObtained = false;
+        this.mazeDone = false;
+        this.timer = Instant.now();
         createWalls();
 
     }
@@ -52,5 +59,22 @@ public class DungeonModel {
 
     public List<Wall> getWalls() {
         return walls;
+    }
+
+    public Instant getTimer() { return timer; }
+
+    public boolean isKeyObtained() { return keyObtained; }
+
+    public void setKeyObtained(boolean keyObtained) {
+        this.keyObtained = keyObtained;
+        this.key.setPosition(new Position(78,5));
+    }
+
+    public boolean isMazeDone() {
+        return mazeDone;
+    }
+
+    public void setMazeDone(boolean mazeDone) {
+        this.mazeDone = mazeDone;
     }
 }

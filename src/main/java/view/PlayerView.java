@@ -11,6 +11,7 @@ public class PlayerView {
     public void draw(TerminalScreen screen, PlayerModel model){
         TextGraphics graphics = screen.newTextGraphics();
         graphics.setForegroundColor(TextColor.Factory.fromString(model.getColor()));
+        graphics.setBackgroundColor(TextColor.Factory.fromString("#4D4D4D"));
         graphics.putString(new TerminalPosition(model.getPosition().getX(), model.getPosition().getY()), Character.toString(model.getCharacter()), SGR.BOLD);
 
     }

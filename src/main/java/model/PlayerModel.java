@@ -6,8 +6,8 @@ public class PlayerModel {
     private char character;
     private String color;
 
-    public PlayerModel(int x, int y){
-        this.position = new Position(x,y);
+    public PlayerModel(Position player){
+        this.position = player;
         this.character = '⚇';
         this.color = "#66b3ff";
     }
