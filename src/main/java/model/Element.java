@@ -1,3 +1,5 @@
+package model;
+
 import com.googlecode.lanterna.SGR;
 import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TextColor;
@@ -12,16 +14,17 @@ abstract public class Element {
         this.position = new Position(10,10);
     }
 
-    Position getPosition() {
+    public Position getPosition() {
         return position;
     }
 
-    void setPosition(Position position) {
+    public void setPosition(Position position) {
         this.position = position;
     }
 
-    void draw(TextGraphics graphics){
+    public void draw(TextGraphics graphics){
         graphics.setForegroundColor(TextColor.Factory.fromString(this.color));
         graphics.putString(new TerminalPosition(position.getX(), position.getY()), Character.toString(this.ch), SGR.BOLD);
+
     }
 }

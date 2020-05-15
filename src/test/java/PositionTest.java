@@ -1,10 +1,13 @@
+import model.Key;
+import model.Ladder;
+import model.PlayerModel;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class PositionTest {
-    private Player getPlayer(){
-        Player p = new Player(38,1);
+    private PlayerModel getPlayer(){
+        PlayerModel p = new PlayerModel(38,1);
         return  p;
     }
     private Key getKey(){
@@ -18,7 +21,7 @@ public class PositionTest {
 
     @Test
     public void playerPosition(){
-        Player p = getPlayer();
+        PlayerModel p = getPlayer();
         assertEquals(p.getPosition().getX(), 38);
         assertEquals(p.getPosition().getY(), 1);
 
