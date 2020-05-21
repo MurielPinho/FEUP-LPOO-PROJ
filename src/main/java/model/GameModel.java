@@ -5,18 +5,21 @@ import java.util.List;
 
 public class GameModel {
 
-    private PlayerModel playerModel;
+    private final PlayerModel playerModel;
     private DungeonModel dungeonModel;
-    private int width;
-    private int height;
+    private final int width;
+    private final int height;
     private int mazeSize;
-    private int maxMazeSize;
+    private final int maxMazeSize;
+    private State GameState;
+    public enum State {MENU, PLAY, DONE}
 
     public GameModel(int width, int height) {
+        this.GameState = State.PLAY;
         this.width = width;
         this.height = height;
         this.mazeSize = 10;
-        this.maxMazeSize = 53;
+        this.maxMazeSize = 50;
         this.dungeonModel = new DungeonModel(mazeSize);
         this.playerModel = new PlayerModel(dungeonModel.getPlayer());
     }
@@ -47,6 +50,16 @@ public class GameModel {
     public int getMazeSize()
     {
         return mazeSize;
+    }
+
+    public State getGameState()
+    {
+        return GameState;
+    }
+
+    public void setGameState(State s)
+    {
+        this.GameState = s;
     }
 
 }

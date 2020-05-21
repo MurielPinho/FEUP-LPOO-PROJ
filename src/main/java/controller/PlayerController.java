@@ -7,8 +7,8 @@ import java.io.IOException;
 import java.util.List;
 
 public class PlayerController {
-    private GameModel model;
-    private GameView view;
+    private final GameModel model;
+    private final GameView view;
 
     public PlayerController(GameModel model, GameView view) {
         this.model = model;
@@ -52,6 +52,10 @@ public class PlayerController {
             {
                 player.setPosition(player.getPosition().up());
             }
+        }
+        else if(action ==GameView.ACTION.QUIT)
+        {
+            model.setGameState(GameModel.State.DONE);
         }
 
         }

@@ -6,8 +6,8 @@ import static com.googlecode.lanterna.Symbols.*;
 public class PlayerModel {
 
     private Position position;
-    private char character;
-    private String color;
+    private final char character;
+    private final String color;
 
     public PlayerModel(Position player){
         this.position = player;

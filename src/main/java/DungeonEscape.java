@@ -9,7 +9,6 @@ public class DungeonEscape {
         GameModel model = new GameModel(70, 55);
         GameView view = new GameView(model);
         GameController controller = new GameController(model, view);
-
         controller.start();
     }
 }

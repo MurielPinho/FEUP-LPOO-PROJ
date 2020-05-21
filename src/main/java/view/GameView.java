@@ -5,9 +5,7 @@ import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.input.KeyType;
 import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
-import com.googlecode.lanterna.terminal.swing.AWTTerminal;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
-import com.googlecode.lanterna.terminal.swing.TerminalEmulatorDeviceConfiguration;
 import model.GameModel;
 
 import java.awt.*;
@@ -15,7 +13,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class GameView {
-    public enum ACTION {LEFT, RIGHT, UP, DOWN,NONE};
+    public enum ACTION {LEFT, RIGHT, UP, DOWN, NONE, QUIT}
 
 
     private final GameModel model;
@@ -41,15 +39,9 @@ public class GameView {
         terminal.setTerminalEmulatorFontConfiguration(fontConfig);
         terminal.setInitialTerminalSize(new TerminalSize(model.getWidth(), model.getHeight()));
         terminal.setTerminalEmulatorTitle("Dungeon Escape");
-       // terminal.setBackgroundColor();
-
         screen = terminal.createScreen();
-
-
-
         screen.setCursorPosition(null);
         screen.startScreen();
-        //screen.doResizeIfNecessary();
 
         this.model = model;
 
@@ -79,6 +71,9 @@ public class GameView {
             }
             if (key.getKeyType() == KeyType.ArrowUp){
                 return ACTION.UP;
+            }
+            if (key.getKeyType() == KeyType.Escape){
+                return ACTION.QUIT;
             }
             else{
                 return ACTION.NONE;

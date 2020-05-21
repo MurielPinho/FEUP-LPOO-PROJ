@@ -6,8 +6,8 @@ import view.GameView;
 import java.io.IOException;
 
 public class DungeonController {
-    private GameModel model;
-    private GameView view;
+    private final GameModel model;
+    private final GameView view;
 
 
     public DungeonController(GameModel model, GameView view) {

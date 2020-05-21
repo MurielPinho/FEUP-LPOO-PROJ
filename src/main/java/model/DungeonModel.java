@@ -1,7 +1,6 @@
 package model;
 
-import model.maze.model.MazeGen;
-import sun.tools.tree.ThisExpression;
+import model.maze.Maze;
 
 import java.time.Instant;
 import java.util.ArrayList;
@@ -9,16 +8,16 @@ import java.util.List;
 
 public class DungeonModel {
 
-    private int height;
-    private int width;
+    private final int height;
+    private final int width;
     private Exit exit;
-    private List<Wall> walls = new ArrayList<>();
+    private final List<Wall> walls = new ArrayList<>();
     private Key key;
-    private Instant timer;
+    private final Instant timer;
     private boolean keyObtained;
     private boolean mazeDone;
-    private MazeGen M;
-    private Position center;
+    private final Maze maze;
+    private final Position center;
     private Position player;
 
 
@@ -26,7 +25,7 @@ public class DungeonModel {
         this.height = mazeSize+1;
         this.width = mazeSize+1;
         this.center = new Position(27,27);
-        this.M = new MazeGen(height,width);
+        this.maze = new Maze(height,width);
         this.keyObtained = false;
         this.mazeDone = false;
         this.timer = Instant.now();
@@ -38,7 +37,7 @@ public class DungeonModel {
         int baseH = center.getY()-(height/2);
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
-                if(this.M.getGrid()[i][j].isWall()){
+                if(this.maze.getGrid()[i][j].isWall()){
                     this.walls.add(new Wall(baseW+j,baseH+i));
                 }
             }
