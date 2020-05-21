@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class DungeonEscape {
     public static void main(String[] args) throws IOException {
-        GameModel model = new GameModel(85, 45);
+        GameModel model = new GameModel(85, 85);
         GameView view = new GameView(model);
         GameController controller = new GameController(model, view);
 

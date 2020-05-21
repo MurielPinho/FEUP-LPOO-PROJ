@@ -23,7 +23,7 @@ public class GameView {
 
 
     public GameView(GameModel model) throws IOException {
-        File fontFile = new File("src/main/resources/BigPixel.otf");
+        File fontFile = new File("src/main/resources/5w5.ttf");
         Font font = null;
         try {
             font = Font.createFont(Font.TRUETYPE_FONT, fontFile);
@@ -32,7 +32,7 @@ public class GameView {
         }
         GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
         ge.registerFont(font);
-        Font loadedFont = font.deriveFont(Font.PLAIN, 15);
+        Font loadedFont = font.deriveFont(Font.PLAIN, 50);
         AWTTerminalFontConfiguration fontConfig = AWTTerminalFontConfiguration.newInstance(loadedFont);
         DefaultTerminalFactory terminal = new DefaultTerminalFactory();
         terminal.setForceAWTOverSwing(true);
