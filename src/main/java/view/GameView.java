@@ -23,7 +23,7 @@ public class GameView {
 
 
     public GameView(GameModel model) throws IOException {
-        File fontFile = new File("src/main/resources/square.ttf");
+        File fontFile = new File("src/main/resources/BigPixel.otf");
         Font font = null;
         try {
             font = Font.createFont(Font.TRUETYPE_FONT, fontFile);
