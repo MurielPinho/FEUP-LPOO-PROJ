@@ -5,7 +5,9 @@ import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.input.KeyType;
 import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
+import com.googlecode.lanterna.terminal.swing.AWTTerminal;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
+import com.googlecode.lanterna.terminal.swing.TerminalEmulatorDeviceConfiguration;
 import model.GameModel;
 
 import java.awt.*;
@@ -23,7 +25,7 @@ public class GameView {
 
 
     public GameView(GameModel model) throws IOException {
-        File fontFile = new File("src/main/resources/5w5.ttf");
+        File fontFile = new File("src/main/resources/square.ttf");
         Font font = null;
         try {
             font = Font.createFont(Font.TRUETYPE_FONT, fontFile);
@@ -32,20 +34,22 @@ public class GameView {
         }
         GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
         ge.registerFont(font);
-        Font loadedFont = font.deriveFont(Font.PLAIN, 50);
+        Font loadedFont = font.deriveFont(Font.CENTER_BASELINE, 15);
         AWTTerminalFontConfiguration fontConfig = AWTTerminalFontConfiguration.newInstance(loadedFont);
         DefaultTerminalFactory terminal = new DefaultTerminalFactory();
         terminal.setForceAWTOverSwing(true);
         terminal.setTerminalEmulatorFontConfiguration(fontConfig);
         terminal.setInitialTerminalSize(new TerminalSize(model.getWidth(), model.getHeight()));
         terminal.setTerminalEmulatorTitle("Dungeon Escape");
+       // terminal.setBackgroundColor();
+
         screen = terminal.createScreen();
 
 
 
         screen.setCursorPosition(null);
         screen.startScreen();
-        screen.doResizeIfNecessary();
+        //screen.doResizeIfNecessary();
 
         this.model = model;
 
@@ -55,8 +59,8 @@ public class GameView {
     public void draw() throws IOException {
         screen.clear();
 
-        dungeonView.draw(screen, model.getDungeonModel());
-        playerView.draw(screen, model.getPlayerModel());
+        dungeonView.draw(screen, model);
+        playerView.draw(screen, model);
 
         screen.refresh();
     }

@@ -9,22 +9,25 @@ public class GameModel {
     private DungeonModel dungeonModel;
     private int width;
     private int height;
-    private int currentMaze = 0;
-    private List<Maze> mazes = new ArrayList<>();
+    private int mazeSize;
+    private int maxMazeSize;
 
     public GameModel(int width, int height) {
         this.width = width;
         this.height = height;
-        for(int i = 1; i <= 4; i++)
-            this.mazes.add(new Maze(i));
-        this.dungeonModel = new DungeonModel(mazes.get(currentMaze));
-        this.playerModel = new PlayerModel(mazes.get(currentMaze).getPlayer());
+        this.mazeSize = 10;
+        this.maxMazeSize = 53;
+        this.dungeonModel = new DungeonModel(mazeSize);
+        this.playerModel = new PlayerModel(dungeonModel.getPlayer());
     }
 
     public void nextMaze() {
-        currentMaze++;
-        this.dungeonModel = new DungeonModel((mazes.get(currentMaze)));
-        this.playerModel.setPosition(mazes.get(currentMaze).getPlayer());
+        if (mazeSize < maxMazeSize)
+        {
+            mazeSize += 10;
+        }
+        this.dungeonModel = new DungeonModel(mazeSize);
+        this.playerModel.setPosition(dungeonModel.getPlayer());
     }
 
     public DungeonModel getDungeonModel() {
@@ -39,6 +42,11 @@ public class GameModel {
 
     public int getHeight() {
         return height;
+    }
+
+    public int getMazeSize()
+    {
+        return mazeSize;
     }
 
 }

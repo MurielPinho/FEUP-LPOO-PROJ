@@ -1,9 +1,9 @@
 package model;
 
-public class Wall extends Element {
-    public Wall(int x, int y){
+public class Exit extends Element {
+    public Exit(int x, int y){
         this.position = new Position(x,y);
-        this.ch = '█';
+        this.ch = 'X';
         this.color = "#D9D9D9";
     }
 }

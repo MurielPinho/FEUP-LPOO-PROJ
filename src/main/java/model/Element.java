@@ -22,6 +22,11 @@ abstract public class Element {
         this.position = position;
     }
 
+    public void setColor(String color)
+    {
+     this.color = color;
+    }
+
     public void draw(TextGraphics graphics){
         graphics.setForegroundColor(TextColor.Factory.fromString(this.color));
         graphics.putString(new TerminalPosition(position.getX(), position.getY()), Character.toString(this.ch), SGR.BOLD);

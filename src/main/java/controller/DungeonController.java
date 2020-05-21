@@ -1,6 +1,5 @@
 package controller;
 
-import model.DungeonModel;
 import model.GameModel;
 import view.GameView;
 
@@ -23,7 +22,7 @@ public class DungeonController {
         {
             model.getDungeonModel().setKeyObtained(true);
         }
-        else if (model.getPlayerModel().getPosition().equals(model.getDungeonModel().getLadder().getPosition()))
+        else if (model.getPlayerModel().getPosition().equals(model.getDungeonModel().getExit().getPosition()))
         {
             model.nextMaze();
         }

@@ -7,7 +7,7 @@ import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.input.KeyType;
 import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
-import model.Maze;
+import model.MazeGen;
 
 import java.io.*;
 import java.time.Instant;
@@ -21,7 +21,7 @@ class Game {
     private KeyStroke key;
     private TextGraphics graphics;
     private Difficulty difficulty;
-    private List<Maze> mazes = new ArrayList<>();
+    private List<MazeGen> mazes = new ArrayList<>();
     private Instant timer;
     private Long time;
     private List<Integer> timeList = new ArrayList<>();
@@ -103,7 +103,7 @@ class Game {
         timer = Instant.now();
         timeList.clear();
         gameStatus = true;
-        for (Maze model.maze : mazes) {
+        for (MazeGen model.maze : mazes) {
             this.dungeon = new Dungeon(390, 390, model.maze);
             gameStatus = this.run();
             timeList.add(time.intValue());
@@ -235,7 +235,7 @@ class Game {
             levels = 5;
 
         for(int i = 1; i <= levels; i++)
-            this.mazes.add(new Maze(i));
+            this.mazes.add(new MazeGen(i));
     }
     private void readScreen(String filename,String fore,String back) throws IOException {
         List<String> lines = new ArrayList<>();

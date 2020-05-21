@@ -15,7 +15,7 @@ import static model.maze.model.Cell.Type.WALL;
  *
  * @author Philipp Malkovsky
  */
-public class Maze {
+public class MazeGen {
 
 
     /**
@@ -45,7 +45,7 @@ public class Maze {
      * @param height height of a model.maze
      * @param width  width of a model.maze
      */
-    public Maze(int height, int width) {
+    public MazeGen(int height, int width) {
         if (height < 3 || width < 3) {
             throw new IllegalArgumentException(
                 "Both the height and the width " +
@@ -62,7 +62,7 @@ public class Maze {
      *
      * @param size size of a model.maze
      */
-    public Maze(int size) {
+    public MazeGen(int size) {
         this(size, size);
     }
 
@@ -190,7 +190,7 @@ public class Maze {
      * </pre>
      */
     private void makeEntranceAndExit() {
-        putCell(0, 1, PASSAGE);
+        //putCell(0, 1, PASSAGE);
         putCell(height - 1, getExitColumn(), PASSAGE);
         if (height % 2 == 0)
             putCell(height - 2, getExitColumn(), PASSAGE);
@@ -355,7 +355,7 @@ public class Maze {
      * Parses a serialized model.maze representation and
      * constructs a new model.maze from it.
      * <p>
-     * Maze is serialized in the following form:
+     * MazeGen is serialized in the following form:
      * <pre>
      * height width
      * cell[0][0] cell[0][1] ... cell[0][width - 1]
@@ -389,7 +389,7 @@ public class Maze {
      * @param str a serialized model.maze representation
      * @return a new model.maze from a given string
      */
-    public static Maze load(String str) {
+    public static MazeGen load(String str) {
         try {
             String[] whole = str.split("\n");
             String[] size = whole[0].split(" ");
@@ -403,7 +403,7 @@ public class Maze {
                         i, j, intToType(parseInt(row[j]))
                     );
             }
-            return new Maze(height, width, grid);
+            return new MazeGen(height, width, grid);
         } catch (Exception e) {
             throw new IllegalArgumentException(
                 "Cannot load the model.maze. " +
@@ -419,7 +419,7 @@ public class Maze {
      * @param width  width of a model.maze
      * @param grid   grid of cells of a model.maze
      */
-    private Maze(int height, int width, Cell[][] grid) {
+    private MazeGen(int height, int width, Cell[][] grid) {
         this.height = height;
         this.width = width;
         this.grid = grid;
@@ -439,7 +439,7 @@ public class Maze {
     /**
      * Converts the model.maze to the serialized form.
      * <p>
-     * Maze is serialized in the following form:
+     * MazeGen is serialized in the following form:
      * <pre>
      * height width
      * cell[0][0] cell[0][1] ... cell[0][width - 1]
@@ -494,5 +494,9 @@ public class Maze {
      */
     private int typeToInt(Cell cell) {
         return cell.isWall() ? 1 : 0;
+    }
+
+    public Cell[][] getGrid() {
+        return grid;
     }
 }

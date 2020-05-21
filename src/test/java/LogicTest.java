@@ -16,8 +16,8 @@ public class LogicTest {
         Key k = new Key(50,39);
         return  k;
     }
-    private Ladder getLadder(){
-        Ladder l = new Ladder(2,25);
+    private Exit getLadder(){
+        Exit l = new Exit(2,25);
         return  l;
     }
 
@@ -40,7 +40,7 @@ public class LogicTest {
 
     @Test
     public void keyPosition(){
-        Ladder l = getLadder();
+        Exit l = getLadder();
         assertEquals(l.getPosition().getX(), 2);
         assertEquals(l.getPosition().getY(), 25);
 

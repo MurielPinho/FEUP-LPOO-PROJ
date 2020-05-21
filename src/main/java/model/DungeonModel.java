@@ -1,5 +1,8 @@
 package model;
 
+import model.maze.model.MazeGen;
+import sun.tools.tree.ThisExpression;
+
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,38 +11,41 @@ public class DungeonModel {
 
     private int height;
     private int width;
-    private Maze maze;
-    private Ladder ladder;
+    private Exit exit;
     private List<Wall> walls = new ArrayList<>();
     private Key key;
     private Instant timer;
     private boolean keyObtained;
     private boolean mazeDone;
+    private MazeGen M;
+    private Position center;
+    private Position player;
 
 
-
-    DungeonModel(Maze maze){
-        this.height = 390;
-        this.width = 390;
-        this.maze = maze;
-        this.key = this.maze.getKey();
-        this.ladder = this.maze.getLadder();
+    DungeonModel(int mazeSize){
+        this.height = mazeSize+1;
+        this.width = mazeSize+1;
+        this.center = new Position(27,27);
+        this.M = new MazeGen(height,width);
         this.keyObtained = false;
         this.mazeDone = false;
         this.timer = Instant.now();
-        createWalls();
+        createElements();
 
     }
-    private void createWalls() {
-        model.maze.model.Maze M = new  model.maze.model.Maze(30,30);
-
-        for (int i = 0; i < this.maze.getWalls().size(); i++) {
-            for (int j = 0; j < this.maze.getWalls().get(i).length(); j++) {
-                if(this.maze.getWalls().get(i).charAt(j) != ' '){
-                    this.walls.add(new Wall(j,i,this.maze.getWalls().get(i).charAt(j)));
+    private void createElements() {
+        int baseW = center.getX()-(width /2);
+        int baseH = center.getY()-(height/2);
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < width; j++) {
+                if(this.M.getGrid()[i][j].isWall()){
+                    this.walls.add(new Wall(baseW+j,baseH+i));
                 }
             }
         }
+        this.key = new Key(baseW+width-2,baseH+1);
+        this.exit = new Exit(baseW+width-2,baseH+height-1);
+        this.player = new Position(baseW+1,baseH+1);
     }
 
     public int getHeight() {
@@ -50,8 +56,8 @@ public class DungeonModel {
         return width;
     }
 
-    public Ladder getLadder() {
-        return ladder;
+    public Exit getExit() {
+        return exit;
     }
 
     public Key getKey() {
@@ -68,7 +74,7 @@ public class DungeonModel {
 
     public void setKeyObtained(boolean keyObtained) {
         this.keyObtained = keyObtained;
-        this.key.setPosition(new Position(78,5));
+        exit.setColor("#BF8040");
     }
 
     public boolean isMazeDone() {
@@ -77,5 +83,9 @@ public class DungeonModel {
 
     public void setMazeDone(boolean mazeDone) {
         this.mazeDone = mazeDone;
+    }
+
+    public Position getPlayer() {
+        return player;
     }
 }
