@@ -14,9 +14,9 @@
 
                   You are imprisoned in a dungeon full of mazes
 
-                  to escape you must get through all maze floors.
+                  to escape you must get through all model.maze floors.
 
-                  Each maze contains a key     that must be
+                  Each model.maze contains a key     that must be
 
                   acquired first, after getting the key an
 

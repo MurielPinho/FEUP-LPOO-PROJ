@@ -103,8 +103,8 @@ class Game {
         timer = Instant.now();
         timeList.clear();
         gameStatus = true;
-        for (Maze maze : mazes) {
-            this.dungeon = new Dungeon(390, 390, maze);
+        for (Maze model.maze : mazes) {
+            this.dungeon = new Dungeon(390, 390, model.maze);
             gameStatus = this.run();
             timeList.add(time.intValue());
             timer = Instant.now();

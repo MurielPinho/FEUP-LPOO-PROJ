@@ -31,6 +31,7 @@ public class DungeonModel {
 
     }
     private void createWalls() {
+        model.maze.model.Maze M = new  model.maze.model.Maze(30,30);
 
         for (int i = 0; i < this.maze.getWalls().size(); i++) {
             for (int j = 0; j < this.maze.getWalls().get(i).length(); j++) {

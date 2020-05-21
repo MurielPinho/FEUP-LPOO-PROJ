@@ -29,7 +29,7 @@ public class Maze {
 
     private List<Integer> readMaze(int n) throws Exception {
         List<Integer> positions = new Vector<>();
-        String path = "src/main/resources/mazes/maze"+n+".txt";
+        String path = "src/main/resources/mazes/model.maze"+n+".txt";
         BufferedReader br = openFile(path);
         String st=br.readLine();
         String[] parts = st.split(",");
