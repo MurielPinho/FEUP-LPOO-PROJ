@@ -24,4 +24,9 @@ public class GameController {
        dungeonController.start();
        playerController.start();
     }
+
+    public GameModel getModel() {
+        return model;
+    }
+
 }
