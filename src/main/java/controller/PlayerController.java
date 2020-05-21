@@ -53,6 +53,7 @@ public class PlayerController {
                 player.setPosition(player.getPosition().up());
             }
         }
+
         }
 
 

@@ -9,7 +9,7 @@ public class GameModel {
     private DungeonModel dungeonModel;
     private int width;
     private int height;
-    private int currentMaze = 1;
+    private int currentMaze = 0;
     private List<Maze> mazes = new ArrayList<>();
 
     public GameModel(int width, int height) {

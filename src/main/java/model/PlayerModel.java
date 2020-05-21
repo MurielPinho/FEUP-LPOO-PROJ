@@ -1,4 +1,7 @@
 package model;
+import com.googlecode.lanterna.Symbols;
+
+import static com.googlecode.lanterna.Symbols.*;
 
 public class PlayerModel {
 
@@ -8,7 +11,7 @@ public class PlayerModel {
 
     public PlayerModel(Position player){
         this.position = player;
-        this.character = '⚇';
+        this.character = '@';
         this.color = "#66b3ff";
     }
     public Position getPosition() {
