@@ -11,14 +11,11 @@ This project was developed by André Mamprin Mori (up201700493@fe.up.pt), Daniel
 
 
 * **Moving** - Player can move to all 4 directions using the arrowkeys.
-* **Screen Loading** - Different screens are loaded automatically as necessary.
 * **Time Counter** - Keeps track of the time the player spent on the maze, uses a separate thread so it updates only once every second.
-* **Score** - Calculated based on time spent on maze, less time equals more points.
-* **Maze Changes** - Mazes changes as the player progresses, steadely increasing the difficulty.
+* **Maze Changes** - Mazes changes as the player progresses, steadily increasing the difficulty.
 * **Wall Detection**  - Check if player positions conflicts with a wall, if it does player doesn't move.
 * **Key** - First objective of the maze, disappears after being acquired.
 * **Exit** - Checks if the player has finished the maze, only appears on the map after the player has acquired the key.    
-* **Press to Continue** - Used to wait for the user to input 'Enter' before advancing with the game.
 * **Close application** - The user may press 'ESC' to close the app.
 
 ## Planned Features
@@ -29,19 +26,13 @@ This project was developed by André Mamprin Mori (up201700493@fe.up.pt), Daniel
 
 ## Design
 
-* **Adapter** - we want to use an existing class, and the interface does not match the one we need. For example, the player controller and the player itself is the same, but the maze must change as requirements are fulfilled.
-* **Singleton** - during gameplay, we must ensure that exactly one instance of certain classes, namely the player controller and the maze class.The game itself must be instanced only once.
+* **Adapter** - we want to use an existing class, and the interface does not match the one we need. For example, the player controller and the player itself are the same, but the maze must change as requirements are fulfilled.
+* **Singleton** - during gameplay, we must ensure that exactly one instance of certain classes, namely the player controller and the maze class, are instantiated at a time. The game itself must be instantiated only once.
 * **Composite** - elements of the game needed to be represented as part-whole hierarchies of objects. An element of the game may be an exit, a key, etc.
-* **State** - a cell alter its behavior, between passage and wall, to update the maze as the player progresses through the game.
+* **State** - a cell alters its behavior, between passage and wall, to update the maze as the player progresses through the game.
 
 ## Known Code Smells and Refactoring Suggestions
-
-
-#### Duplicate code
-
-The playerWon() and playerLost() methods from Game class are almost identical, complicating the code and making it longer.
-
-A way to solve the problem would be to Extract a Method gameResult().   
+  
 
 #### Data class
 
