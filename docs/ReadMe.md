@@ -30,6 +30,7 @@ This project was developed by André Mamprin Mori (up201700493@fe.up.pt), Daniel
 * **Singleton** - during gameplay, we must ensure that exactly one instance of certain classes, namely the player controller and the maze class, are instantiated at a time. The game itself must be instantiated only once.
 * **Composite** - elements of the game needed to be represented as part-whole hierarchies of objects. An element of the game may be an exit, a key, etc.
 * **State** - a cell alters its behavior, between passage and wall, to update the maze as the player progresses through the game.
+* **Command** - we used the command pattern to control user input, having the gameModel class read general input and having each different class handle the input differently.
 
 ## Known Code Smells and Refactoring Suggestions
   
