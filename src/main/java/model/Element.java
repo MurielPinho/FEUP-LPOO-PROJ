@@ -27,6 +27,11 @@ abstract public class Element {
      this.color = color;
     }
 
+    public String getColor()
+    {
+     return color;
+    }
+
     public void draw(TextGraphics graphics){
         graphics.setForegroundColor(TextColor.Factory.fromString(this.color));
         graphics.putString(new TerminalPosition(position.getX(), position.getY()), Character.toString(this.ch), SGR.BOLD);

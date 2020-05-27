@@ -53,4 +53,31 @@ public class LogicTest {
         assertEquals(k.getPosition().getY(), 39);
 
     }
+
+    @Test
+    public void checkElements(){
+        //Verify if all necessary elements have been created
+        GameModel model = new GameModel(70, 55);
+
+        assertNotNull(model.getDungeonModel().getExit());
+        assertNotNull(model.getDungeonModel().getKey());
+        assertNotNull(model.getDungeonModel().getWalls());
+
+    }
+
+    @Test
+    public void checkKeyExit(){
+        //Verify if key and exit do not coexist
+        GameModel model = new GameModel(70, 55);
+
+        if(model.getDungeonModel().isKeyObtained())
+        {
+            assertEquals("#BF8040", model.getDungeonModel().getExit().getColor());
+        }
+        else
+        {
+            assertEquals("#D9D9D9", model.getDungeonModel().getExit().getColor());
+        }
+
+    }
 }
