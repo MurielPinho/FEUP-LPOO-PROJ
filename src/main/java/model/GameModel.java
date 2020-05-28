@@ -30,11 +30,17 @@ public class GameModel {
     }
 
     public void nextMaze() {
-        if (mazeSize < maxMazeSize)
+        if (mazeSize == maxMazeSize)
+        {
+            mazeSize = 10;
+            setGameState(State.MENU);
+        }
+        else
         {
             mazeSize += 10;
         }
         newMaze();
+
     }
 
     public void newMaze()
