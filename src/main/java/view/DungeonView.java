@@ -1,7 +1,6 @@
 package view;
 
 import com.googlecode.lanterna.SGR;
-import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.screen.Screen;
@@ -18,14 +17,16 @@ public class DungeonView {
         DungeonModel dungeon = model.getDungeonModel();
         long time =dungeon.getTimer().until(Instant.now(),SECONDS);
         graphics.setForegroundColor(TextColor.Factory.fromString("#D9D9D9"));
-        graphics.putString(new TerminalPosition(57,5), "TIME PLAYED", SGR.UNDERLINE);
-        graphics.putString(57,7, Long.toString(time));
-        graphics.putString(new TerminalPosition(61,7), "seconds");
-        graphics.putString(new TerminalPosition(58,10), "MAZE SIZE",SGR.UNDERLINE);
-        graphics.putString(new TerminalPosition(62,12), "X");
-        graphics.putString(new TerminalPosition(58,12), Integer.toString(model.getMazeSize()));
-        graphics.putString(new TerminalPosition(65,12), Integer.toString(model.getMazeSize()));
-        graphics.drawLine(55,0,55,55,'|');
+        graphics.putString(57,3, "TIME PLAYED", SGR.UNDERLINE);
+        graphics.putString(57,5, Long.toString(time));
+        graphics.putString(61,5, "seconds");
+        graphics.putString(58,8, "MAZE SIZE",SGR.UNDERLINE);
+        graphics.putString(62,10, "X");
+        graphics.putString(58,10, Integer.toString(model.getMazeSize()));
+        graphics.putString(65,10, Integer.toString(model.getMazeSize()));
+        graphics.drawLine(55,0,55,13,'#');
+        graphics.setCharacter(55,14,'#');
+        graphics.drawLine(56,14,70,14,'#');
         dungeon.getExit().draw(graphics);
         for(Wall wall : dungeon.getWalls()) {
             graphics.setBackgroundColor(TextColor.Factory.fromString("#D9D9D9"));

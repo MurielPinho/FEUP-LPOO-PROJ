@@ -13,12 +13,13 @@ import java.io.File;
 import java.io.IOException;
 
 public class GameView {
-    public enum ACTION {LEFT, RIGHT, UP, DOWN, NONE, QUIT}
+    public enum ACTION {LEFT, RIGHT, UP, DOWN, RETURN, NONE, QUIT, ENTER}
 
 
     private final GameModel model;
     private final DungeonView dungeonView;
     private final PlayerView playerView;
+    private final MenuView menuView;
     private final Screen screen;
 
 
@@ -47,12 +48,18 @@ public class GameView {
 
         this.dungeonView = new DungeonView();
         this.playerView = new PlayerView();
+        this.menuView = new MenuView();
     }
     public void draw() throws IOException {
         screen.clear();
+         if (model.getGameState() == GameModel.State.PLAY){
+            dungeonView.draw(screen, model);
+            playerView.draw(screen, model);
+         }
+         else if (model.getGameState() == GameModel.State.MENU){
+             menuView.draw(screen,model);
+         }
 
-        dungeonView.draw(screen, model);
-        playerView.draw(screen, model);
 
         screen.refresh();
     }
@@ -74,6 +81,12 @@ public class GameView {
             }
             if (key.getKeyType() == KeyType.Escape){
                 return ACTION.QUIT;
+            }
+            if ((key.getKeyType() == KeyType.Character) &&(key.getCharacter() == 'q') ){
+                return ACTION.RETURN;
+            }
+            if (key.getKeyType() == KeyType.Enter){
+                return ACTION.ENTER;
             }
             else{
                 return ACTION.NONE;

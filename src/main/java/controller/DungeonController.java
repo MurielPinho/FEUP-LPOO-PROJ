@@ -16,7 +16,7 @@ public class DungeonController {
     }
 
 
-    public boolean isLevelOver(){
+    public void isLevelOver(){
 
         if (model.getPlayerModel().getPosition().equals(model.getDungeonModel().getKey().getPosition()))
         {
@@ -26,7 +26,6 @@ public class DungeonController {
         {
             model.nextMaze();
         }
-    return true;
     }
 
 
@@ -42,14 +41,7 @@ public class DungeonController {
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-
                     isLevelOver();
-
-                    try {
-                        view.draw();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
                 }
             }
         }).start();

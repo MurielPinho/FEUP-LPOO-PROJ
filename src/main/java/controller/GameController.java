@@ -7,7 +7,8 @@ import java.io.IOException;
 
 public class GameController {
     private final DungeonController dungeonController;
-    private final PlayerController playerController;
+    private final InputController inputController;
+
 
     private final GameView view;
     private final GameModel model;
@@ -17,13 +18,21 @@ public class GameController {
         this.view = view;
         this.model = model;
         this.dungeonController = new DungeonController(model, view);
-        this.playerController = new PlayerController(model,view);
+        this.inputController = new InputController(model,view);
+
     }
 
     public void start() throws IOException {
        dungeonController.start();
-       playerController.start();
+       inputController.start();
        update();
+    }
+
+    public void checkGameState(){
+        if (model.getGameState() == GameModel.State.DONE)
+        {
+            System.exit(0);
+        }
     }
 
     public GameModel getModel() {
@@ -36,16 +45,14 @@ public class GameController {
             public void run() {
                 while (true) {
                     try {
-                        Thread.sleep(500);
-                    } catch (InterruptedException e) {
+                        Thread.sleep(100);
+                        checkGameState();
+                        view.draw();
+                    } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
-                        if (model.getGameState() == GameModel.State.DONE)
-                        {
-                            System.exit(0);
-                        }
-                    }
                 }
+            }
         }).start();
     }
 
