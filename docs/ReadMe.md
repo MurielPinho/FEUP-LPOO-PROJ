@@ -17,20 +17,30 @@ This project was developed by André Mamprin Mori (up201700493@fe.up.pt), Daniel
 * **Key** - First objective of the maze, disappears after being acquired.
 * **Exit** - Checks if the player has finished the maze, only appears on the map after the player has acquired the key.    
 * **Close application** - The user may press 'ESC' to close the app.
-
-## Planned Features
-
 * **Menu System** - Contains a set of options and information for the player, uses menu selector and press to continue instead of text input to control the game.
 * **Menu Selector** - Draws a selector on the menu so the player can choose which options it wants.
 * **Give Up** - Player can give up on a maze anytime, by pressing the 'Q' key, counts as an immediate defeat and brings the user back to the main menu.
 
 ## Design
 
+### Design Patterns
+
 * **Adapter** - we want to use an existing class, and the interface does not match the one we need. For example, the player controller and the player itself are the same, but the maze must change as requirements are fulfilled.
 * **Singleton** - during gameplay, we must ensure that exactly one instance of certain classes, namely the player controller and the maze class, are instantiated at a time. The game itself must be instantiated only once.
 * **Composite** - elements of the game needed to be represented as part-whole hierarchies of objects. An element of the game may be an exit, a key, etc.
 * **State** - a cell alters its behavior, between passage and wall, to update the maze as the player progresses through the game.
 * **Command** - we used the command pattern to control user input, having the gameModel class read general input and having each different class handle the input differently.
+
+### Architectural Patterns
+
+* **MVC** - the project is broken into 3 components. In addition to dividing the application into these components, 
+         the model–view–controller design defines the interactions between them.
+    
+        Model: The central component of the pattern. It is the application's dynamic data structure, independent of the user interface. It directly manages the data, logic and rules of the application.
+
+        View: Any representation of information such as a chart, diagram or table. Multiple views of the same information are possible, such as a bar chart for management and a tabular view for accountants.
+        
+        Controller: Accepts input and converts it to commands for the model or view.
 
 ## Known Code Smells and Refactoring Suggestions
   
