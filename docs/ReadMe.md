@@ -26,10 +26,19 @@ This project was developed by André Mamprin Mori (up201700493@fe.up.pt), Daniel
 ### Design Patterns
 
 * **Adapter** - we want to use an existing class, and the interface does not match the one we need. For example, the player controller and the player itself are the same, but the maze must change as requirements are fulfilled.
+![Adapter](https://github.com/FEUP-LPOO/lpoo-2020-g38/blob/master/docs/Images/Adapter.png?raw=true)
+
 * **Singleton** - during gameplay, we must ensure that exactly one instance of certain classes, namely the player controller and the maze class, are instantiated at a time. The game itself must be instantiated only once.
+![Use Cases](https://github.com/FEUP-LPOO/lpoo-2020-g38/blob/master/docs/Images/Singleton.png?raw=true)
+
 * **Composite** - elements of the game needed to be represented as part-whole hierarchies of objects. An element of the game may be an exit, a key, etc.
+![Composite](https://github.com/FEUP-LPOO/lpoo-2020-g38/blob/master/docs/Images/Composite.png?raw=true)
+
 * **State** - a cell alters its behavior, between passage and wall, to update the maze as the player progresses through the game.
+![State](https://github.com/FEUP-LPOO/lpoo-2020-g38/blob/master/docs/Images/State.png?raw=true)
+
 * **Command** - we used the command pattern to control user input, having the gameModel class read general input and having each different class handle the input differently.
+![Command](https://github.com/FEUP-LPOO/lpoo-2020-g38/blob/master/docs/Images/Command.png?raw=true)
 
 ### Architectural Patterns
 
