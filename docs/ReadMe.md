@@ -92,11 +92,26 @@ A way to solve this is to delete unused code and unneeded files
 
 ## Testing Results
 
-* checkElements: Verify if all necessary elements have been created
-* checkKeyExit: Verify if key and exit do not coexist
-* playerPosition: Verify if the player position is valid
-* keyPosition: Verify if the key position is valid
-* ladderPosition: Verify if the ladder/exit position is valid
+#### Model tests
+
+* **modelsNotNull:** Verifies if all necessary models have been created
+* **checkElements:** Verifies if all necessary elements have been created
+* **checkKeyExit:** Verifies if key and exit do not coexist
+* **keyPosition:** Verifies if the key position is valid
+* **playerPosition:** Verifies if the player position is valid
+* **ladderPosition:** Verifies if the ladder/exit position is valid
+
+![TestModelsResults](https://github.com/FEUP-LPOO/lpoo-2020-g38/blob/master/docs/Images/TestModelsResults.png?raw=true)
+
+#### Controller tests
+
+* **testGameController:** Verifies if all necessary models have been created
+* **testDungeonControllerKey:** Verifies if dungeon controller acts correctly when the player gets the key
+* **testDungeonControllerExit:** Verifies if dungeon controller acts correctly when the player gets to the exit
+* **testInputControllerGame:** Verifies if input controller handles user input correctly while playing the game
+* **testInputControllerMenu:** Verifies if input controller handles user input correctly while on the menu
+
+![TestControllersResults](https://github.com/FEUP-LPOO/lpoo-2020-g38/blob/master/docs/Images/TestControllersResults.png?raw=true)
 
 ## Self-evaluation
 
