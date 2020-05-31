@@ -1,4 +1,4 @@
-package model;
+package com.g38.model;
 
 public class Position {
     private final int x;

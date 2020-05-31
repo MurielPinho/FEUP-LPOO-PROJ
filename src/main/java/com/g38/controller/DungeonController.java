@@ -1,9 +1,7 @@
-package controller;
+package com.g38.controller;
 
-import model.GameModel;
-import view.GameView;
-
-import java.io.IOException;
+import com.g38.model.GameModel;
+import com.g38.view.GameView;
 
 public class DungeonController {
     private final GameModel model;

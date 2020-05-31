@@ -1,4 +1,4 @@
-package model;
+package com.g38.model;
 
 public class Exit extends Element {
     public Exit(int x, int y){

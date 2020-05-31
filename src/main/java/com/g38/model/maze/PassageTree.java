@@ -1,11 +1,11 @@
-package model.maze;
+package com.g38.model.maze;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 import static java.util.stream.Collectors.toList;
-import static model.maze.Cell.Type.PASSAGE;
+import static com.g38.model.maze.Cell.Type.PASSAGE;
 
 public class PassageTree {
 

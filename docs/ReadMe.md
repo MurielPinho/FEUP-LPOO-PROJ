@@ -27,15 +27,15 @@ This project was developed by André Mamprin Mori (up201700493@fe.up.pt), Daniel
 
 ### Design Patterns
 
-#### The interface does not match the controller we intend to use
-* **The Problem in Context** - we want to use an existing class, and the interface does not match the one we need. For example, the  controller has different options for the menu and the maze.  
+#### The interface does not match the com.g38.controller we intend to use
+* **The Problem in Context** - we want to use an existing class, and the interface does not match the one we need. For example, the  com.g38.controller has different options for the menu and the maze.  
 * **The Pattern** - We have applied the Adapter pattern as it let's classes work together that couldn't otherwise because of incompatible interfaces.
 * **Implementation**
 ![Adapter](https://github.com/FEUP-LPOO/lpoo-2020-g38/blob/master/docs/Images/Adapter.png?raw=true)
 * **Consequences** - Its implementation allowed us to use an existing class in multiple circunstances, presenting us with a reusable class that works with unforseen classes.
 
 #### Certain elements must possess a single instance
-* **The Problem in Context** - during gameplay, we must ensure that exactly one instance of certain classes, namely the player controller and the maze class, are instantiated at a time. The game itself must be instantiated only once.
+* **The Problem in Context** - during gameplay, we must ensure that exactly one instance of certain classes, namely the player com.g38.controller and the maze class, are instantiated at a time. The game itself must be instantiated only once.
 * **The Pattern** - We have applied the Singleton pattern as it ensures that a class only has one instance and provide a global point to acess it.
 * **Implementation**
 ![Singleton](https://github.com/FEUP-LPOO/lpoo-2020-g38/blob/master/docs/Images/Singleton.png?raw=true)
@@ -67,13 +67,13 @@ Commands can be extended and manipulated like any other object.
 ### Architectural Patterns
 
 * **MVC** - the project is broken into 3 components. In addition to dividing the application into these components, 
-         the model–view–controller design defines the interactions between them.
+         the com.g38.model–com.g38.view–com.g38.controller design defines the interactions between them.
     
   * Model: The central component of the pattern. It is the application's dynamic data structure, independent of the user interface. It directly manages the data, logic and rules of the application.
 
-  * View: Any representation of information such as a chart, diagram or table. Multiple views of the same information are possible, such as a bar chart for management and a tabular view for accountants.
+  * View: Any representation of information such as a chart, diagram or table. Multiple views of the same information are possible, such as a bar chart for management and a tabular com.g38.view for accountants.
         
-  * Controller: Accepts input and converts it to commands for the model or view.
+  * Controller: Accepts input and converts it to commands for the com.g38.model or com.g38.view.
 
 ## Known Code Smells and Refactoring Suggestions
   

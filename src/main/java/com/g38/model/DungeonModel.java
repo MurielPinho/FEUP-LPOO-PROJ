@@ -1,6 +1,6 @@
-package model;
+package com.g38.model;
 
-import model.maze.Maze;
+import com.g38.model.maze.Maze;
 
 import java.time.Instant;
 import java.util.ArrayList;

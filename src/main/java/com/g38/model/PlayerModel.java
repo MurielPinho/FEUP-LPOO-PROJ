@@ -1,7 +1,4 @@
-package model;
-import com.googlecode.lanterna.Symbols;
-
-import static com.googlecode.lanterna.Symbols.*;
+package com.g38.model;
 
 public class PlayerModel {
 

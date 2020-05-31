@@ -1,7 +1,7 @@
-package controller;
+package com.g38.controller;
 
-import model.*;
-import view.GameView;
+import com.g38.model.*;
+import com.g38.view.GameView;
 
 import java.io.IOException;
 import java.util.List;

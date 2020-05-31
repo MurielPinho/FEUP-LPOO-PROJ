@@ -1,4 +1,4 @@
-package view;
+package com.g38.view;
 
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.input.KeyStroke;
@@ -6,7 +6,7 @@ import com.googlecode.lanterna.input.KeyType;
 import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
-import model.GameModel;
+import com.g38.model.GameModel;
 
 import java.awt.*;
 import java.io.File;

@@ -1,10 +1,10 @@
-package view;
+package com.g38.view;
 
 import com.googlecode.lanterna.SGR;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.screen.Screen;
-import model.GameModel;
+import com.g38.model.GameModel;
 
 public class MenuView {
 

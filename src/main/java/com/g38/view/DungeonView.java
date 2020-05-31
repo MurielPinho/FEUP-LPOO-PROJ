@@ -1,12 +1,12 @@
-package view;
+package com.g38.view;
 
 import com.googlecode.lanterna.SGR;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.screen.Screen;
-import model.Wall;
-import model.DungeonModel;
-import model.GameModel;
+import com.g38.model.Wall;
+import com.g38.model.DungeonModel;
+import com.g38.model.GameModel;
 
 import java.time.Instant;
 import static java.time.temporal.ChronoUnit.SECONDS;

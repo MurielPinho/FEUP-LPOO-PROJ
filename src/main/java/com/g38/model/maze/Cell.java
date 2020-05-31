@@ -1,4 +1,4 @@
-package model.maze;
+package com.g38.model.maze;
 
 public class Cell {
 

@@ -1,4 +1,4 @@
-package model;
+package com.g38.model;
 
 import com.googlecode.lanterna.SGR;
 import com.googlecode.lanterna.TerminalPosition;

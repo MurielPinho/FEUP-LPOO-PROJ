@@ -1,11 +1,11 @@
-package view;
+package com.g38.view;
 
 import com.googlecode.lanterna.SGR;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.screen.Screen;
-import model.GameModel;
-import model.PlayerModel;
+import com.g38.model.GameModel;
+import com.g38.model.PlayerModel;
 
 public class PlayerView {
     public void draw(Screen screen, GameModel model){

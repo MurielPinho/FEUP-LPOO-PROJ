@@ -1,9 +1,9 @@
-package model.maze;
+package com.g38.model.maze;
 
 import java.util.function.Consumer;
 
-import static model.maze.Cell.Type.PASSAGE;
-import static model.maze.Cell.Type.WALL;
+import static com.g38.model.maze.Cell.Type.PASSAGE;
+import static com.g38.model.maze.Cell.Type.WALL;
 
 
 public class Maze {
@@ -18,7 +18,7 @@ public class Maze {
         if (height < 3 || width < 3) {
             throw new IllegalArgumentException(
                 "Both the height and the width " +
-                    "of the model.maze must be at least 3");
+                    "of the com.g38.model.maze must be at least 3");
         }
         this.height = height;
         this.width = width;

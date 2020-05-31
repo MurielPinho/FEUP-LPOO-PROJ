@@ -1,4 +1,4 @@
-package model.maze;
+package com.g38.model.maze;
 
 import static java.util.stream.IntStream.range;
 

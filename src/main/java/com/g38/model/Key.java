@@ -1,4 +1,4 @@
-package model;
+package com.g38.model;
 
 public class Key extends Element {
     public Key(int x, int y){

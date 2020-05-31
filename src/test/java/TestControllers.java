@@ -1,9 +1,9 @@
-import controller.DungeonController;
-import controller.GameController;
-import controller.InputController;
-import model.*;
+import com.g38.controller.DungeonController;
+import com.g38.controller.GameController;
+import com.g38.controller.InputController;
+import com.g38.model.*;
 import org.junit.Test;
-import view.GameView;
+import com.g38.view.GameView;
 
 import java.io.IOException;
 

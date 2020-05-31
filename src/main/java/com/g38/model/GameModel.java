@@ -1,7 +1,4 @@
-package model;
-
-import java.util.ArrayList;
-import java.util.List;
+package com.g38.model;
 
 public class GameModel {
 

@@ -1,6 +1,8 @@
-import controller.GameController;
-import model.GameModel;
-import view.GameView;
+package com.g38;
+
+import com.g38.controller.GameController;
+import com.g38.model.GameModel;
+import com.g38.view.GameView;
 
 import java.io.IOException;
 
