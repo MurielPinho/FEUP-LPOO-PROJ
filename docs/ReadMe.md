@@ -92,6 +92,8 @@ A way to solve this is to delete unused code and unneeded files
 
 ## Testing Results
 
+#### Model tests
+
 * **modelsNotNull:** Verifies if all necessary models have been created
 * **checkElements:** Verifies if all necessary elements have been created
 * **checkKeyExit:** Verifies if key and exit do not coexist
@@ -100,6 +102,8 @@ A way to solve this is to delete unused code and unneeded files
 * **ladderPosition:** Verifies if the ladder/exit position is valid
 
 ![TestModelsResults](https://github.com/FEUP-LPOO/lpoo-2020-g38/blob/master/docs/Images/TestModelsResults.png?raw=true)
+
+#### Controller tests
 
 * **testGameController:** Verifies if all necessary models have been created
 * **testDungeonControllerKey:** Verifies if dungeon controller acts correctly when the player gets the key
