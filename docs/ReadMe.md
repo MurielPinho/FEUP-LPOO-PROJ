@@ -2,8 +2,7 @@
 
 # Dungeon Escape
 
-
-You wake up imprisoned in a dungeon with endless mazes, to escape you must get through all maze floors as fast as you can. There is a maze in each floor and each maze contains one key that must be acquired to unlock an exit, after passing through all floors you are free from the dungeon.
+You wake up imprisoned in a dungeon with endless mazes, you must get through all mazes to escape. Each maze contains one key that must be acquired to unlock an exit. After passing through all mazes you are free from  the DUNGEON.
 
 This project was developed by André Mamprin Mori (up201700493@fe.up.pt), Daniel Gazola Bradaschia (up201700494@fe.up.pt) and Muriel Pinho (up201700132@fe.up.pt) for LPOO 2019⁄20.
 
