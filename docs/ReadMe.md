@@ -25,31 +25,54 @@ This project was developed by André Mamprin Mori (up201700493@fe.up.pt), Daniel
 
 ### Design Patterns
 
-* **Adapter** - we want to use an existing class, and the interface does not match the one we need. For example, the player controller and the player itself are the same, but the maze must change as requirements are fulfilled.
+#### The interface does not match the controller we intend to use
+* **The Problem in Context** - we want to use an existing class, and the interface does not match the one we need. For example, the  controller has different options for the menu and the maze.  
+* **The Pattern** - We have applied the Adapter pattern as it let's classes work together that couldn't otherwise because of incompatible interfaces.
+* **Implementation**
 ![Adapter](https://github.com/FEUP-LPOO/lpoo-2020-g38/blob/master/docs/Images/Adapter.png?raw=true)
+* **Consequences** - Its implementation allowed us to use an existing class in multiple circunstances, presenting us with a reusable class that works with unforseen classes.
 
-* **Singleton** - during gameplay, we must ensure that exactly one instance of certain classes, namely the player controller and the maze class, are instantiated at a time. The game itself must be instantiated only once.
-![Use Cases](https://github.com/FEUP-LPOO/lpoo-2020-g38/blob/master/docs/Images/Singleton.png?raw=true)
+#### Certain elements must posses a single instance
+* **The Problem in Context** - during gameplay, we must ensure that exactly one instance of certain classes, namely the player controller and the maze class, are instantiated at a time. The game itself must be instantiated only once.
+* **The Pattern** - We have applied the Singleton pattern as it ensures that a class only has one instance and provide a global point to acess it.
+* **Implementation**
+![Singleton](https://github.com/FEUP-LPOO/lpoo-2020-g38/blob/master/docs/Images/Singleton.png?raw=true)
+* **Consequences** - Allows a global access of certain features.
 
-* **Composite** - elements of the game needed to be represented as part-whole hierarchies of objects. An element of the game may be an exit, a key, etc.
+
+#### Certain elements must posses a single instance
+* **The Problem in Context** - elements of the game needed to be represented as part-whole hierarchies of objects. An element of the game may be an exit, a key, etc.
+* **The Pattern** - We have applied the Composite pattern as we want to represent part-whole hierarchies of objects.
+* **Implementation**
+  
 ![Composite](https://github.com/FEUP-LPOO/lpoo-2020-g38/blob/master/docs/Images/Composite.png?raw=true)
+* **Consequences** - The game has been kept simple and it is easier to add new types of components.
 
-* **State** - a cell alters its behavior, between passage and wall, to update the maze as the player progresses through the game.
+#### The state of the game changes as requested by the player
+* **The Problem in Context** - Our game must change behaviour as the player request to start or return to menu
+* **The Pattern** - We have applied the State pattern as an object behavior depends on its state, and it must change that state in run-time.
+* **Implementation**
 ![State](https://github.com/FEUP-LPOO/lpoo-2020-g38/blob/master/docs/Images/State.png?raw=true)
-
-* **Command** - we used the command pattern to control user input, having the gameModel class read general input and having each different class handle the input differently.
+* **Consequences** - The state transitions are explicit, being easier to implement them.
+  
+#### Operations such as undo/redo must be supported
+* **The Problem in Context** - The menus must receive inputs and aswer with the appropriate command.
+* **The Pattern** - We have applied the Command pattern to control user input, having the gameModel class read general input and having each different class handle the input differently.
+* **Implementation**
 ![Command](https://github.com/FEUP-LPOO/lpoo-2020-g38/blob/master/docs/Images/Command.png?raw=true)
+* **Consequences** - It decouples the object that invokes the operation from the one that knows how to perform it.
+Commands can be extended and manipulated like any other object.
 
 ### Architectural Patterns
 
 * **MVC** - the project is broken into 3 components. In addition to dividing the application into these components, 
          the model–view–controller design defines the interactions between them.
     
-        Model: The central component of the pattern. It is the application's dynamic data structure, independent of the user interface. It directly manages the data, logic and rules of the application.
+  * Model: The central component of the pattern. It is the application's dynamic data structure, independent of the user interface. It directly manages the data, logic and rules of the application.
 
-        View: Any representation of information such as a chart, diagram or table. Multiple views of the same information are possible, such as a bar chart for management and a tabular view for accountants.
+  * View: Any representation of information such as a chart, diagram or table. Multiple views of the same information are possible, such as a bar chart for management and a tabular view for accountants.
         
-        Controller: Accepts input and converts it to commands for the model or view.
+  * Controller: Accepts input and converts it to commands for the model or view.
 
 ## Known Code Smells and Refactoring Suggestions
   
