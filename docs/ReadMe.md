@@ -32,7 +32,7 @@ This project was developed by André Mamprin Mori (up201700493@fe.up.pt), Daniel
 ![Adapter](https://github.com/FEUP-LPOO/lpoo-2020-g38/blob/master/docs/Images/Adapter.png?raw=true)
 * **Consequences** - Its implementation allowed us to use an existing class in multiple circunstances, presenting us with a reusable class that works with unforseen classes.
 
-#### Certain elements must posses a single instance
+#### Certain elements must possess a single instance
 * **The Problem in Context** - during gameplay, we must ensure that exactly one instance of certain classes, namely the player controller and the maze class, are instantiated at a time. The game itself must be instantiated only once.
 * **The Pattern** - We have applied the Singleton pattern as it ensures that a class only has one instance and provide a global point to acess it.
 * **Implementation**
@@ -40,7 +40,7 @@ This project was developed by André Mamprin Mori (up201700493@fe.up.pt), Daniel
 * **Consequences** - Allows a global access of certain features.
 
 
-#### Certain elements must posses a single instance
+#### Certain elements must possess a single instance
 * **The Problem in Context** - elements of the game needed to be represented as part-whole hierarchies of objects. An element of the game may be an exit, a key, etc.
 * **The Pattern** - We have applied the Composite pattern as we want to represent part-whole hierarchies of objects.
 * **Implementation**
@@ -56,7 +56,7 @@ This project was developed by André Mamprin Mori (up201700493@fe.up.pt), Daniel
 * **Consequences** - The state transitions are explicit, being easier to implement them.
   
 #### Operations such as undo/redo must be supported
-* **The Problem in Context** - The menus must receive inputs and aswer with the appropriate command.
+* **The Problem in Context** - The menus must receive inputs and answer with the appropriate command.
 * **The Pattern** - We have applied the Command pattern to control user input, having the gameModel class read general input and having each different class handle the input differently.
 * **Implementation**
 ![Command](https://github.com/FEUP-LPOO/lpoo-2020-g38/blob/master/docs/Images/Command.png?raw=true)
