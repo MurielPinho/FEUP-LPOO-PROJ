@@ -113,6 +113,8 @@ A way to solve this is to delete unused code and unneeded files
 
 ![TestControllersResults](https://github.com/FEUP-LPOO/lpoo-2020-g38/blob/master/docs/Images/TestControllersResults.png?raw=true)
 
+[Mutation Testing](https://github.com/FEUP-LPOO/lpoo-2020-g38/blob/master/docs/pitest/ "Mutation Tests")
+
 ## Self-evaluation
 
 The project was developed equally by all members, most of it was done in discord meetings in which the ideas and solutions for the code were discussed and implemented. For this reason all members had equal contribution in all parts of the project.
