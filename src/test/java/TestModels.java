@@ -7,7 +7,7 @@ import java.io.IOException;
 
 import static org.junit.Assert.*;
 
-public class ModelTest {
+public class TestModels {
     private PlayerModel getPlayer(){
         PlayerModel p = new PlayerModel(new Position(38,1));
         return  p;

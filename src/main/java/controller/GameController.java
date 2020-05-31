@@ -39,6 +39,14 @@ public class GameController {
         return model;
     }
 
+    public InputController getInputController() {
+        return inputController;
+    }
+
+    public DungeonController getDungeonController() {
+        return dungeonController;
+    }
+
     public void update() {
         new Thread(new Runnable() {
             @Override
