@@ -39,11 +39,10 @@ This project was developed by André Mamprin Mori (up201700493@fe.up.pt), Daniel
 * **Consequences** - Allows a global access of certain features.
 
 
-#### Certain elements must possess a single instance
+#### Certain elements behave in the same manner
 * **The Problem in Context** - elements of the game needed to be represented as part-whole hierarchies of objects. An element of the game may be an exit, a key, etc.
 * **The Pattern** - We have applied the Composite pattern as we want to represent part-whole hierarchies of objects.
 * **Implementation**
-  
 ![Composite](https://github.com/FEUP-LPOO/lpoo-2020-g38/blob/master/docs/Images/Composite.png?raw=true)
 * **Consequences** - The game has been kept simple and it is easier to add new types of components.
 
@@ -56,7 +55,7 @@ This project was developed by André Mamprin Mori (up201700493@fe.up.pt), Daniel
   
 #### Operations such as undo/redo must be supported
 * **The Problem in Context** - The menus must receive inputs and answer with the appropriate command.
-* **The Pattern** - We have applied the Command pattern to control user input, having the gameModel class read general input and having each different class handle the input differently.
+* **The Pattern** - We have applied the Command pattern to control user input, having the gameView class draw the right interface as the command is given.
 * **Implementation**
 ![Command](https://github.com/FEUP-LPOO/lpoo-2020-g38/blob/master/docs/Images/Command.png?raw=true)
 * **Consequences** - It decouples the object that invokes the operation from the one that knows how to perform it.
@@ -90,7 +89,11 @@ A way to solve this is to delete unused code and unneeded files
 
 ## Testing Results
 
-Tests are currently being developed
+* checkElements: Verify if all necessary elements have been created
+* checkKeyExit: Verify if key and exit do not coexist
+* playerPosition: Verify if the player position is valid
+* keyPosition: Verify if the key position is valid
+* ladderPosition: Verify if the ladder/exit position is valid
 
 ## Self-evaluation
 
